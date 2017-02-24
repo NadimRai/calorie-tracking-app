@@ -1,20 +1,21 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {JumbotronComponent} from './components/jumbotron/jumbotron.component';
+import {FormComponent} from './components/pages/form.component';
+import {FoodlogComponent} from './components/pages/foodlog.component';
+import { routing } from './app.routing';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports:      [ BrowserModule, routing ],
+  declarations: [ AppComponent, 
+                  NavbarComponent, 
+                  JumbotronComponent,
+                  FormComponent,
+                  FoodlogComponent ],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
