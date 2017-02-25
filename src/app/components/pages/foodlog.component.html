@@ -1,2 +1,47 @@
-<h3>Food Log</h3>
-<p>usto pulvinar aliquam, nullam mauris lorem iaculis placerat, volutpat integer at wisi molestie, dictum vestibulum velit integer. Elit imperdiet vitae justo, eget nulla elit curabitur cras id ullamcorper. Mauris sociosqu vestibulum, ultricies urna, eget et curabitur lorem eu aliquam ut, justo eget sit ut. Consectetuer wisi laoree</p>
+<div class="col-md-6 col-md-offset-3">
+	<div class="row">
+		<div class="food-log">
+			<h1>Food Log</h1>
+		</div>
+	</div>
+</div>
+<div class="row">
+    <div *ngFor="let currentTask of tasks">
+	    <div class="col-md-6 col-md-offset-3">
+			<div class="row">
+	    		<div class="panel panel-default">
+					<div class="panel-body task-font">
+	      				<h3>Name: {{ currentTask.name }}</h3>
+	      				<h3>Description: {{ currentTask.description }}</h3>
+	      				<h3>Calories: {{ currentTask.calories }}</h3>
+	      				<button class="btn btn-info"(click)="showDetails(currentTask)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> To Edit Scroll Down</button>
+	    			</div>
+	    		</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div *ngIf="selectedTask">
+	    <div class="col-md-6 col-md-offset-3">
+			<div class="row">
+	    		<div class="panel panel-default">
+					<div class="panel-body">
+	      				<h1>Edit Meal Log</h1>
+      					<label>Name:</label>
+        				<input [(ngModel)]="selectedTask.name"><br>
+        				<label>Description:</label>
+        				<input [(ngModel)]="selectedTask.description"><br>
+        				<label>Calories:</label>
+        				<input [(ngModel)]="selectedTask.calories">
+      					
+		        		<button (click)="finishedEditing()" class="btn btn-info"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Done</button>
+      				</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+</div>
+  
+	
